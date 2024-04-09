@@ -1,0 +1,49 @@
+= Repositories
+
+== Infos
+
+* Spring Data JDBC ist ein Persistenz Framework von Spring
+* Im Gegensatz zu Spring Data JPA gibt es in Spring Data JDBC keinen Cache, Lazy-Loading, Write-Behind oder andere Features von JPA.
+* Weiters verfügt das Framework über einen eigenen Object Relational Mapper (ORM), der die Objekte in die Datenbank mapped.
+
+Wichtig::
+Spring Data JDBC bietet *keine* Schemaerzeugung. Das DB-Schema muss entweder manuell oder über die Applikation erzeugt werden (`schema.sql` oder programatisch)
+
+
+== Konfiguration Abhängigkeiten in pom.xml
+
+Das Framework wird einfach über die Maven-Konfiguration `pom.xml` hinzugefügt. In diesem Zuge werden auch die _dependencies_ der H2-Datenbank hinzugefügt:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <dependencies>
+        // <.>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        // <.>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+</project>
+----
+<.> Aktiviert Spring Data JDBC im Projekt
+<.> Hinzufügen der H2 Datenbank (wenn nicht bereits vorhanden)
+
+
+
+
+== Erstellen der Domain-Models
+
+[source, java]
+----
+
+
+----

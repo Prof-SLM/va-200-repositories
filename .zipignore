@@ -1,0 +1,15 @@
+#############################
+# Use glob syntax
+#############################
+# *         = match everything
+# **        = 0 .. 1 Dir
+# ?         = Single char
+# [seq]     = any char in sequence
+# [!seq]    = any char NOT in sequence
+# etc.
+
+.idea
+target
+logs
+bin
+node_modules
